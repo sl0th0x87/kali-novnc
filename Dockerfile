@@ -1,7 +1,7 @@
 FROM sl0th0x87/kali-basic:latest
 
 LABEL maintainer="sl0th0x87@gmail.com"
-LABEL description="Kali Linux with shellinabox"
+LABEL description="Kali Linux with noVNC"
 
 ## Connection ports for controlling the UI:
 # VNC port:5901
@@ -80,7 +80,7 @@ RUN mkdir -p $NO_VNC_HOME/utils/websockify && \
     wget -qO- https://netcologne.dl.sourceforge.net/project/tigervnc/stable/1.10.1/tigervnc-1.10.1.x86_64.tar.gz | tar xz --strip 1 -C / && \
     wget -qO- https://github.com/novnc/noVNC/archive/v1.3.0.tar.gz | tar xz --strip 1 -C $NO_VNC_HOME && \
     wget -qO- https://github.com/novnc/websockify/archive/v0.10.0.tar.gz | tar xz --strip 1 -C $NO_VNC_HOME/utils/websockify && \
-    chmod +x -v $NO_VNC_HOME/utils/*.sh && \
+#    chmod +x -v $NO_VNC_HOME/utils/*.sh && \
     cp -f /headless/noVNC/vnc.html /headless/noVNC/index.html
 
 ### inject files
